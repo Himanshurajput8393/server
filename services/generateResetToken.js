@@ -2,7 +2,7 @@ import JWT from "jsonwebtoken";
 
 export const generateResetToken = async (email) => {
   try {
-    const token = await JWT.sign({ email }, process.env.JWT_SECRET, {
+    const token = await JWT.sign({ email }, "process.env.JWT_SECRET", {
       expiresIn: "1h",
     });
     return token;
