@@ -13,7 +13,7 @@ export const authToken = (req, res, next) => {
       });
     }
 
-    const verifiedToken = JWT.verify(token, process.env.JWT_SECRET);
+    const verifiedToken = JWT.verify(token, "process.env.JWT_SECRET");
     req.userId = verifiedToken._id;
 
     next();
